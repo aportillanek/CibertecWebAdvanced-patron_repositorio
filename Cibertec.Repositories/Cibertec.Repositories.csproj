@@ -9,7 +9,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="RepositoryEF\" />
+    <Folder Include="NorthwindEF\" />
   </ItemGroup>
 
   <ItemGroup>

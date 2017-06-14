@@ -1,11 +1,12 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
+using System;
 
 namespace Cibertec.Repositories
 {
     public class RepositoryEF<T> : IRepository<T> where T : class
     {
-        private readonly DbContext _context;
+        protected readonly DbContext _context;
         public RepositoryEF(DbContext context)
         {
             _context = context;
@@ -21,6 +22,12 @@ namespace Cibertec.Repositories
         {
             return _context.Set<T>();
         }
+
+        public T GetEntityById(int id)
+        {
+            return _context.Set<T>().Find(id);
+        }
+        
 
         public int Insert(T entity)
         {

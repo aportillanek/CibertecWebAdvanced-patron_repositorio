@@ -31,5 +31,10 @@ namespace Cibertec.Controllers
         {
             return View();
         }
+        [Route("home/issue")]
+        public IActionResult CreateIssue()
+        {
+            throw new Exception("New error for demotration");
+        }
     }
 }

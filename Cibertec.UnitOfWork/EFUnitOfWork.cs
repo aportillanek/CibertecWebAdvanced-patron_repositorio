@@ -4,6 +4,8 @@ using System.Text;
 using Cibertec.Models;
 using Cibertec.Repositories;
 using Microsoft.EntityFrameworkCore;
+using Cibertec.Repositories.Northwind.EF;
+using Cibertec.Repositories.Northwind;
 
 namespace Cibertec.UnitOfWork
 {
@@ -11,14 +13,14 @@ namespace Cibertec.UnitOfWork
     {
         public EFUnitOfWork(DbContext context)
         {
-            Customers = new RepositoryEF<Customer>(context);
+            Customers = new CustomerRepository(context);
             Orders = new RepositoryEF<Order>(context);
             OrderItems = new RepositoryEF<OrderItem>(context);
             Products = new RepositoryEF<Product>(context);
             Suppliers = new RepositoryEF<Supplier>(context);
         }
 
-        public IRepository<Customer> Customers { get; private set; }
+        public ICustomerRepository Customers { get; private set; }
         public IRepository<Order> Orders { get; private set; }
         public IRepository<OrderItem> OrderItems { get; private set; }
         public IRepository<Product> Products { get; private set; }
