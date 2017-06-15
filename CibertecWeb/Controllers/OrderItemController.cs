@@ -7,10 +7,10 @@ using Cibertec.UnitOfWork;
 
 namespace Cibertec.Web.Controllers
 {
-    public class OrderItemsController : Controller
+    public class OrderItemController : Controller
     {
         private readonly IUnitOfWork _unit;
-        public OrderItemsController(IUnitOfWork unit)
+        public OrderItemController(IUnitOfWork unit)
         {
             _unit = unit;
         }
