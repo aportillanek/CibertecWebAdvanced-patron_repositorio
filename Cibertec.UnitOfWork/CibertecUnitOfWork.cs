@@ -10,16 +10,16 @@ namespace Cibertec.UnitOfWork
         public CibertecUnitOfWork(string connectionString)
         {
             Customers = new CustomerRepository(connectionString);
-            Orders = new Repository<Order>(connectionString);
-            OrderItems = new Repository<OrderItem>(connectionString);
-            Products = new Repository<Product>(connectionString);
-            Suppliers = new Repository<Supplier>(connectionString);
+            Orders = new OrderRepository(connectionString);
+            OrderItems = new OrderItemRepository(connectionString);
+            Products = new ProductRepository(connectionString);
+            Suppliers = new SupplierRepository(connectionString);
         }
 
         public ICustomerRepository Customers { get; private set; }
-        public IRepository<Order> Orders { get; private set; }
-        public IRepository<OrderItem> OrderItems { get; private set; }
-        public IRepository<Product> Products { get; private set; }
-        public IRepository<Supplier> Suppliers { get; private set; }
+        public IOrderRepository Orders { get; private set; }
+        public IOrderItemRepository OrderItems { get; private set; }
+        public IProductRepository Products { get; private set; }
+        public ISupplierRepository Suppliers { get; private set; }
     }
 }

@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Linq;
 
-namespace Cibertec.Repositories.Northwind.EF
+namespace Cibertec.Repositories.Northwind.EntityFramework
 {
     public class CustomerRepository : RepositoryEF<Customer>, ICustomerRepository
     {
