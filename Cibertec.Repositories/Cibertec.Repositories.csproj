@@ -2,14 +2,18 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp1.1</TargetFramework>
+		<DebugType>full</DebugType>
+        <DebugSymbols>True</DebugSymbols>
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Cibertec.Models\Cibertec.Models.csproj" />
+    <Compile Remove="NorthwindEF\**" />
+    <EmbeddedResource Remove="NorthwindEF\**" />
+    <None Remove="NorthwindEF\**" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="NorthwindEF\" />
+    <ProjectReference Include="..\Cibertec.Models\Cibertec.Models.csproj" />
   </ItemGroup>
 
   <ItemGroup>
