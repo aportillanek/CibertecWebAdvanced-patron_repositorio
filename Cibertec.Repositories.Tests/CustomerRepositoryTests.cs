@@ -6,6 +6,8 @@ using System.Linq;
 using System.Text;
 using Xunit;
 using FluentAssertions;
+using Cibertec.MockData;
+
 namespace Cibertec.Repositories.Tests
 {
     public class CustomerRepositoryTests
@@ -34,12 +36,32 @@ namespace Cibertec.Repositories.Tests
             result.Should().BeGreaterThan(0);
         }
 
-        [Fact(DisplayName = "[CustomerRepositoryTests] Fail Insert Customers")]
-        public void Insert_Customer_Wrong()
+        
+        [Fact(DisplayName = "Customer Update Test")]
+        public void Customer_update()
         {
             //  var customer = new Customer();
-            var result = _unit.Customers.Insert(new Customer());
-            result.Should().Be(0);
+            var result = _unit.Customers.Update(new Customer());
+            result.Should().BeTrue();
         }
+
+        [Fact(DisplayName = "Customer Delete Test")]
+        public void Customer_delete()
+        {
+            //  var customer = new Customer();
+            var result = _unit.Customers.Delete(new Customer());
+            result.Should().BeTrue();
+        }
+        [Theory(DisplayName ="Customer Search By Names Test")]
+        [InlineData("Joan", "Perez")]
+        [InlineData("Julio","Velarde")]
+        [InlineData("Alan", "Garcia")]
+        public void Customer_SearchByName(string firstName,string lastName)
+        {
+
+            var customer = _unit.Customers.SearchByName(firstName, lastName);
+            customer.Should().NotBeNull();
+        }
+
     }
 }

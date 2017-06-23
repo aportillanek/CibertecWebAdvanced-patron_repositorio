@@ -1,0 +1,17 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp1.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Moq" Version="4.7.63" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Cibertec.Models\Cibertec.Models.csproj" />
+    <ProjectReference Include="..\Cibertec.Repositories\Cibertec.Repositories.csproj" />
+    <ProjectReference Include="..\Cibertec.UnitOfWork\Cibertec.UnitOfWork.csproj" />
+  </ItemGroup>
+
+</Project>

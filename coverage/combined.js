@@ -342,6 +342,19 @@ var assemblies = [
     {  "name" : "Cibertec.UnitOfWork.CibertecUnitOfWork", "reportPath" : "Cibertec.UnitOfWork_CibertecUnitOfWork.htm", "coveredLines" : 0, "uncoveredLines" : 12, "coverableLines" : 12, "totalLines" : 25, "coverageType" : "LineCoverage", "methodCoverage" : "-", "coveredBranches" : 0, "totalBranches" : 0, "lineCoverageHistory" : [], "branchCoverageHistory" : [] },
     {  "name" : "Cibertec.UnitOfWork.EFUnitOfWork", "reportPath" : "Cibertec.UnitOfWork_EFUnitOfWork.htm", "coveredLines" : 0, "uncoveredLines" : 12, "coverableLines" : 12, "totalLines" : 28, "coverageType" : "LineCoverage", "methodCoverage" : "-", "coveredBranches" : 0, "totalBranches" : 0, "lineCoverageHistory" : [], "branchCoverageHistory" : [] },
   ]},
+  {
+    "name" : "Cibertec.Web",
+    "classes" : [
+    {  "name" : "Cibertec.Controllers.CustomerController", "reportPath" : "Cibertec.Web_CustomerController.htm", "coveredLines" : 5, "uncoveredLines" : 0, "coverableLines" : 5, "totalLines" : 29, "coverageType" : "LineCoverage", "methodCoverage" : "-", "coveredBranches" : 0, "totalBranches" : 0, "lineCoverageHistory" : [], "branchCoverageHistory" : [] },
+    {  "name" : "Cibertec.Controllers.HomeController", "reportPath" : "Cibertec.Web_HomeController.htm", "coveredLines" : 0, "uncoveredLines" : 7, "coverableLines" : 7, "totalLines" : 40, "coverageType" : "LineCoverage", "methodCoverage" : "-", "coveredBranches" : 0, "totalBranches" : 0, "lineCoverageHistory" : [], "branchCoverageHistory" : [] },
+    {  "name" : "Cibertec.Program", "reportPath" : "Cibertec.Web_Program.htm", "coveredLines" : 0, "uncoveredLines" : 9, "coverableLines" : 9, "totalLines" : 25, "coverageType" : "LineCoverage", "methodCoverage" : "-", "coveredBranches" : 0, "totalBranches" : 0, "lineCoverageHistory" : [], "branchCoverageHistory" : [] },
+    {  "name" : "Cibertec.Startup", "reportPath" : "Cibertec.Web_Startup.htm", "coveredLines" : 0, "uncoveredLines" : 29, "coverableLines" : 29, "totalLines" : 85, "coverageType" : "LineCoverage", "methodCoverage" : "-", "coveredBranches" : 0, "totalBranches" : 2, "lineCoverageHistory" : [], "branchCoverageHistory" : [] },
+    {  "name" : "Cibertec.Web.Controllers.OrderController", "reportPath" : "Cibertec.Web_OrderController.htm", "coveredLines" : 0, "uncoveredLines" : 4, "coverableLines" : 4, "totalLines" : 23, "coverageType" : "LineCoverage", "methodCoverage" : "-", "coveredBranches" : 0, "totalBranches" : 0, "lineCoverageHistory" : [], "branchCoverageHistory" : [] },
+    {  "name" : "Cibertec.Web.Controllers.OrderItemsController", "reportPath" : "Cibertec.Web_OrderItemsController.htm", "coveredLines" : 0, "uncoveredLines" : 4, "coverableLines" : 4, "totalLines" : 23, "coverageType" : "LineCoverage", "methodCoverage" : "-", "coveredBranches" : 0, "totalBranches" : 0, "lineCoverageHistory" : [], "branchCoverageHistory" : [] },
+    {  "name" : "Cibertec.Web.Filter.ExceptionLoggerFilter", "reportPath" : "Cibertec.Web_ExceptionLoggerFilter.htm", "coveredLines" : 0, "uncoveredLines" : 3, "coverableLines" : 3, "totalLines" : 24, "coverageType" : "LineCoverage", "methodCoverage" : "-", "coveredBranches" : 0, "totalBranches" : 0, "lineCoverageHistory" : [], "branchCoverageHistory" : [] },
+    {  "name" : "Cibertec.Web.Filter.over", "reportPath" : "Cibertec.Web_over.htm", "coveredLines" : 0, "uncoveredLines" : 0, "coverableLines" : 0, "totalLines" : 0, "coverageType" : "MethodCoverage", "methodCoverage" : "-", "coveredBranches" : 0, "totalBranches" : 0, "lineCoverageHistory" : [], "branchCoverageHistory" : [] },
+    {  "name" : "Cibertec.Web.Models.NorthwindDbContext", "reportPath" : "Cibertec.Web_NorthwindDbContext.htm", "coveredLines" : 0, "uncoveredLines" : 5, "coverableLines" : 5, "totalLines" : 19, "coverageType" : "LineCoverage", "methodCoverage" : "-", "coveredBranches" : 0, "totalBranches" : 0, "lineCoverageHistory" : [], "branchCoverageHistory" : [] },
+  ]},
 ];
 
 
