@@ -14,7 +14,7 @@ namespace Cibertec.Automation
 
             var drive = new ChromeDriver();
             drive.Navigate().GoToUrl("http://localhost:5000");
-           // drive.Close();
+            drive.Close();
         }
     }
 }

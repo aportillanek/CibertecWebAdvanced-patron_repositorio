@@ -19,6 +19,33 @@ namespace Cibertec.Controllers
             return View(_unit.Customers.GetAll());
         }
 
+        public IActionResult Create()
+        {
+
+            return View();
+        }
+        public IActionResult Edit(int id)
+        {
+
+            return View(_unit.Customers.GetEntityById(id));
+        }
+
+        [HttpPost]
+        public IActionResult Edit(Customer customer)
+        {
+            var result = _unit.Customers.Update(customer);
+
+            if (result) //Si es verdadero
+            {
+                return RedirectToAction("Index"); //Redireccionamos al listado
+            }
+            else
+            {
+                return View(customer);
+            }
+
+        }
+
         public IActionResult Detail()
         {
           
