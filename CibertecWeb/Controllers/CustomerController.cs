@@ -19,11 +19,7 @@ namespace Cibertec.Controllers
             return View(_unit.Customers.GetAll());
         }
 
-        public IActionResult Create()
-        {
-
-            return View();
-        }
+        
         public IActionResult Edit(int id)
         {
 
@@ -35,9 +31,9 @@ namespace Cibertec.Controllers
         {
             var result = _unit.Customers.Update(customer);
 
-            if (result) //Si es verdadero
+            if (result) 
             {
-                return RedirectToAction("Index"); //Redireccionamos al listado
+                return RedirectToAction("Index"); 
             }
             else
             {
@@ -52,5 +48,29 @@ namespace Cibertec.Controllers
 
             return View(_unit.Customers.SearchByName("Maria", "Anders"));
         }
+        public IActionResult Create()
+        {
+            ViewBag.CustomerList = _unit.Customers.GetAll();
+            return View();
+        }
+        [HttpPost]
+        public IActionResult Create(Customer customer)
+        {
+            var result = _unit.Customers.Insert(customer);
+
+            if(result>0)
+            {
+                return RedirectToAction("Index");
+
+            }
+            else
+            {
+                return View(customer);
+            }
+          
+
+        }
+
+       
     }
 }
