@@ -70,6 +70,30 @@ namespace Cibertec.Controllers
           
 
         }
+        [HttpPost]
+        public IActionResult Delete(Customer customer)
+        {
+            var result = _unit.Customers.Delete(customer);
+            if (result)
+            {
+                return RedirectToAction("Index");
+
+            }
+            else
+            {
+                return View(customer);
+            }
+         
+
+        }
+
+        public IActionResult Delete (int id)
+        {
+
+            return View(_unit.Customers.GetEntityById(id));
+        }
+
+      
 
        
     }
