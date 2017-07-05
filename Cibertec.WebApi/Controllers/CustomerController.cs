@@ -23,8 +23,9 @@ namespace Cibertec.WebApi.Controllers
        
         public IActionResult Create([FromBody] Customer customer)
        {
-
+            
             return Ok(_unit.Customers.Insert(customer));
+
         }
     }
 }
