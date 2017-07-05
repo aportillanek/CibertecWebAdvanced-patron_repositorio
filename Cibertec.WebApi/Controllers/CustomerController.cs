@@ -1,15 +1,18 @@
 ﻿using Cibertec.Models;
 using Cibertec.UnitOfWork;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 namespace Cibertec.WebApi.Controllers
 {
+   
     [Route("customer")]
-    public class CustomerController:Controller
+   
+    public class CustomerController:BaseController
     {
-        private readonly IUnitOfWork _unit;
-        public CustomerController(IUnitOfWork unit)
+       
+        public CustomerController(IUnitOfWork unit):base(unit)
         {
-            _unit = unit;
+            
         }
         [HttpGet]
         public IActionResult List()
@@ -18,7 +21,7 @@ namespace Cibertec.WebApi.Controllers
         }
         [HttpPost]
        
-        public IActionResult Create(Customer customer)
+        public IActionResult Create([FromBody] Customer customer)
        {
 
             return Ok(_unit.Customers.Insert(customer));
