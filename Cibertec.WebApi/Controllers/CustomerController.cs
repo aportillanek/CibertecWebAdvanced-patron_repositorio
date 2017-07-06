@@ -25,7 +25,17 @@ namespace Cibertec.WebApi.Controllers
        {
             
             return Ok(_unit.Customers.Insert(customer));
+        }
+        [HttpPut]
+        public IActionResult Update([FromBody] Customer customer)
+        {
+            return Ok(_unit.Customers.Update(customer));
 
+        }
+        [HttpDelete]
+        public IActionResult Delete([FromBody] Customer customer)
+        {
+            return Ok(_unit.Customers.Delete(customer));
 
         }
     }
