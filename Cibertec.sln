@@ -3,27 +3,29 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.26430.12
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cibertec.Web", "CibertecWeb\Cibertec.Web.csproj", "{447DAA49-60D6-4D79-8746-8FB8CFAFC536}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cibertec.Web", "CibertecWeb\Cibertec.Web.csproj", "{447DAA49-60D6-4D79-8746-8FB8CFAFC536}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Data", "Data", "{68865883-E5A0-48F4-8DA5-9A5653AE2B7D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cibertec.Models", "Cibertec.Models\Cibertec.Models.csproj", "{461E678B-63DD-4041-BFC2-33560D2EB165}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cibertec.Models", "Cibertec.Models\Cibertec.Models.csproj", "{461E678B-63DD-4041-BFC2-33560D2EB165}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cibertec.Repositories", "Cibertec.Repositories\Cibertec.Repositories.csproj", "{61796173-8EF4-4A0F-BBFE-F205ACD7697B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cibertec.Repositories", "Cibertec.Repositories\Cibertec.Repositories.csproj", "{61796173-8EF4-4A0F-BBFE-F205ACD7697B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cibertec.UnitOfWork", "Cibertec.UnitOfWork\Cibertec.UnitOfWork.csproj", "{AE4B1698-ACA1-42DA-8564-E2A0DF43BB32}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cibertec.UnitOfWork", "Cibertec.UnitOfWork\Cibertec.UnitOfWork.csproj", "{AE4B1698-ACA1-42DA-8564-E2A0DF43BB32}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Test", "Test", "{01C36549-8AF5-4086-B282-EBE83F9D4AE2}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cibertec.Repositories.Tests", "Cibertec.Repositories.Tests\Cibertec.Repositories.Tests.csproj", "{910F6569-8F4A-43AD-B52D-E859166930E2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cibertec.Web.Tests", "Cibertec.Web.Tests\Cibertec.Web.Tests.csproj", "{988D2D8D-BDE6-4CFE-A04F-39B04ACEF388}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cibertec.Web.Tests", "Cibertec.Web.Tests\Cibertec.Web.Tests.csproj", "{988D2D8D-BDE6-4CFE-A04F-39B04ACEF388}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cibertec.MockData", "Cibertec.MockData\Cibertec.MockData.csproj", "{14C575CF-0619-4787-8569-C45DC7CD6633}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cibertec.MockData", "Cibertec.MockData\Cibertec.MockData.csproj", "{14C575CF-0619-4787-8569-C45DC7CD6633}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Web", "Web", "{4D5381C2-96A1-4E22-9DDC-02825A495328}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cibertec.WebApi", "Cibertec.WebApi\Cibertec.WebApi.csproj", "{60F9F1D4-51CB-4348-92A5-1BD5DC53E3E5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cibertec.WebApi", "Cibertec.WebApi\Cibertec.WebApi.csproj", "{60F9F1D4-51CB-4348-92A5-1BD5DC53E3E5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cibertec.Angular", "Cibertec.Angular\Cibertec.Angular.csproj", "{CBBB11C5-B3EF-4063-AEC8-07A77699F4BF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -63,6 +65,10 @@ Global
 		{60F9F1D4-51CB-4348-92A5-1BD5DC53E3E5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{60F9F1D4-51CB-4348-92A5-1BD5DC53E3E5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{60F9F1D4-51CB-4348-92A5-1BD5DC53E3E5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CBBB11C5-B3EF-4063-AEC8-07A77699F4BF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CBBB11C5-B3EF-4063-AEC8-07A77699F4BF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CBBB11C5-B3EF-4063-AEC8-07A77699F4BF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CBBB11C5-B3EF-4063-AEC8-07A77699F4BF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -76,5 +82,6 @@ Global
 		{988D2D8D-BDE6-4CFE-A04F-39B04ACEF388} = {01C36549-8AF5-4086-B282-EBE83F9D4AE2}
 		{14C575CF-0619-4787-8569-C45DC7CD6633} = {01C36549-8AF5-4086-B282-EBE83F9D4AE2}
 		{60F9F1D4-51CB-4348-92A5-1BD5DC53E3E5} = {4D5381C2-96A1-4E22-9DDC-02825A495328}
+		{CBBB11C5-B3EF-4063-AEC8-07A77699F4BF} = {4D5381C2-96A1-4E22-9DDC-02825A495328}
 	EndGlobalSection
 EndGlobal
