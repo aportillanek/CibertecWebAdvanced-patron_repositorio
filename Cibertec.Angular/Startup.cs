@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
+using Cibertec.Angular.Code;
 
 namespace Cibertec.Angular
 {
@@ -28,7 +29,9 @@ namespace Cibertec.Angular
         public void ConfigureServices(IServiceCollection services)
         {
             // Add framework services.
+            services.Configure<ConfigurationFile>(Configuration.GetSection("ConfigurationFile"));
             services.AddMvc();
+            
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

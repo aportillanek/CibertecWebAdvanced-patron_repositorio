@@ -26,6 +26,12 @@ namespace Cibertec.WebApi.Provider
         }
         public Task Invoke(HttpContext context)
         {
+            //if(!context.Request.Path.ToString().ToLower().Contains(_options.Path))
+            //{
+
+            //    return _next(context);
+            //}
+
             if(!context.Request.Path.Equals(_options.Path,StringComparison.Ordinal))
             {
 
