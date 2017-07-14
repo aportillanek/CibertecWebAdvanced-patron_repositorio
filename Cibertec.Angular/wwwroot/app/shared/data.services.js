@@ -1,6 +1,6 @@
 ﻿(function () {
     angular.module('app')
-        .factory('dataservice', dataService);
+        .factory('dataService', dataService);
 
     dataService.$inject = ['$http'];
 
@@ -24,7 +24,7 @@
 
         }
         function deleteData(url) {
-            return $http.delete(url, data);
+            return $http.delete(url);
 
 
         }

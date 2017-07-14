@@ -10,7 +10,7 @@
 
     <link href="~/libraries/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="~/css/site.css" />
-    
+
 
 
 </head>
@@ -28,11 +28,12 @@
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li><a asp-area="" asp-controller="Home" asp-action="Index">Home</a></li>
-                    <li><a asp-area="" asp-controller="Home" asp-action="About">About</a></li>
-                    <li><a asp-area="" asp-controller="Home" asp-action="Contact">Contact</a></li>
-                   <li><a ng-if="!vm.validate()" ui-sref="login" ui-sref-active="active">Login</a></li>
-                    <li><a ng-if="vm.validate()" ng-click="vm.logout()" href="#" ui-sref-active="active" >Loginout</a></li>
+
+                    <li><a ng-if="!vm.validate()" ui-sref="login" ui-sref-active="active">Login</a></li>
+                    <li><a ng-if="vm.validate()" ng-click="vm.logout()" href="#" ui-sref-active="active">Logout</a></li>
+                    <li><a ng-if="vm.validate()"  ui-sref="product" ui-sref-active="active">product</a></li>
+                    <li><a ng-if="vm.validate()" ui-sref="supplier" ui-sref-active="active">supplier</a></li>
+                    <li><a ng-if="vm.validate()" ui-sref="customer" ui-sref-active="active">customer</a></li>
                 </ul>
             </div>
         </div>
@@ -47,21 +48,33 @@
     <script src="~/libraries/angular/angular.js"></script>
     <script src="~/libraries/angular/angular-ui-router.js"></script>
     <script src="~/libraries/angular/angular-animate.js"></script>
-
     <script src="~/libraries/angular/angular-local-storage.js"></script>
+
     <script src="~/libraries/jquery/jquery.js"></script>
     <script src="~/libraries/bootstrap/js/bootstrap.min.js"></script>
+
     <script src="~/app/app.js"></script>
     <script src="~/app/app.routes.js"></script>
     <script src="~/app/app.config.js"></script>
     <script src="~/app/app.controller.js"></script>
+
+
     <script src="~/app/shared/data.services.js"></script>
     <script src="~/app/shared/authentication.service.js"></script>
     <script src="~/app/shared/settings.service.js"></script>
-    <script src="~/app/public/login/login.controller.js"></script>  
-   
 
-    
+    <script src="~/app/public/login/login.controller.js"></script>
+
+    <script src="~/app/private/product/product.controller.js"></script>
+     <script src="~/app/private/supplier/supplier.controller.js"></script>
+
+    <script src="~/app/private/customer/customer.controller.js"></script>
+
+
+    <script src="~/app/private/product/directives/product-card/product-card.js"></script>
+    <script src="~/app/private/supplier/directives/supplier-card/supplier-card.js"></script>
+    <script src="~/app/private/customer/directives/customer-card/customer-card.js"></script>
+
 </body>
 </html>
 

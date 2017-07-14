@@ -16,7 +16,7 @@
         return service;
 
         function setLogin(state) {
-            islogged = state;
+            isLogged = state;
         }
         function getLogin() {
             return isLogged;
