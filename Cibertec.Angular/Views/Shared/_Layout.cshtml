@@ -7,10 +7,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - Cibertec.Angular</title>
 
+    <environment names="Development, Production">
 
-    <link href="~/libraries/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
-    <link rel="stylesheet" href="~/css/site.css" />
 
+        <link href="~/libraries/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+        <link rel="stylesheet" href="~/css/site.css" />
+    </environment>
 
 
 </head>
@@ -45,7 +47,20 @@
             <p>&copy; 2017 - Cibertec.Angular</p>
         </footer>
     </div>
-    <script src="~/libraries/angular/angular.js"></script>
+    <environment names="Development">
+        <script src="~/libraries/bootstrap/js/bootstrap.js"></script>
+        <script src="~/libraries/angular/angular.js"></script>
+        <script src="~/js/app-site.js"></script>
+        <script src="~/js/app-cibertec.js"></script>
+    </environment>
+    <environment names="Production">
+
+        <script src="~/libraries/bootstrap/js/bootstrap.min.js"></script>
+        <script src="~/js/angular.min.js"></script>
+        <script src="~/js/app-site.min.js"></script>
+        <script src="~/js/app-cibertec.min.js"></script>
+    </environment>
+    @*<script src="~/libraries/angular/angular.js"></script>
     <script src="~/libraries/angular/angular-ui-router.js"></script>
     <script src="~/libraries/angular/angular-animate.js"></script>
     <script src="~/libraries/angular/angular-local-storage.js"></script>
@@ -73,7 +88,7 @@
 
     <script src="~/app/private/product/directives/product-card/product-card.js"></script>
     <script src="~/app/private/supplier/directives/supplier-card/supplier-card.js"></script>
-    <script src="~/app/private/customer/directives/customer-card/customer-card.js"></script>
+    <script src="~/app/private/customer/directives/customer-card/customer-card.js"></script>*@
 
 </body>
 </html>

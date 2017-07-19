@@ -8,8 +8,20 @@
     function productController(dataService, configService, $state) {
         var apiUrl = configService.getApiUrl();
         var vm = this;
+        //Propiedades
         vm.product = {};
         vm.productList = [];
+        vm.modalButtonTitle = '';
+        vm.readOnly = false;
+        vm.isDelete = false;
+        vm.modalTitle = '';
+        vm.showCreate = false;
+        //funciones
+        vm.getProduct = getProduct;
+        vm.create = create;
+        vm.edit = edit;
+        vm.delete = productDelete;
+        //vm.closeModal=closeModal;
         init();
         function init() {
             if (!configService.getLogin()) return $state.go('login');
@@ -24,6 +36,106 @@
                     vm.productList = [];
                     console.log(error);
                 });
+
+        }
+
+
+
+        function getProduct(id) {
+            vm.product = null;
+            dataService.getData(apiUrl + '/product' + id)
+                .then(function (result) {
+                    vm.productList = result.data;
+                },
+                function (error) {
+                    vm.productList = [];
+                    console.log(error);
+                });
+
+
+        }
+
+        function updateProduct(id) {
+            if (!vm.product) return;
+            dataService.putData(apiUrl + '/product', vm.product)
+                .then(function (result) {
+                    vm.product = {};
+                    list();
+                    closeModal();
+                },
+                function (error) {
+                    vm.product = {};
+                    console.log(error);
+                });
+
+
+        }
+
+        function createProduct(id) {
+            if (!vm.product) return;
+            dataService.postData(apiUrl + '/product', vm.product)
+                .then(function (result) {
+                    getProduct(result.data.id)
+                    list();
+                    vm.showCreate = true;
+                },
+                function (error) {
+
+                    console.log(error);
+                });
+
+
+        }
+        function deleteProduct()
+        {
+
+            dataService.deleteData(apiUrl + '/product' + vm.product.id)
+                .then(function (result) {
+                   
+                    list();
+                    closeModal();
+                },
+                function (error) {
+
+                    console.log(error);
+                });
+
+
+        }
+
+        function create()
+        {
+            vm.product = {};
+            vm.modalTitle = 'New Product';
+            vm.modalButtonTitle = '';
+            vm.readOnly = false;
+            vm.modalFunction = createProduct;
+            vm.isDelete = false;
+
+        }
+
+        function edit()
+        {
+            vm.showCreate = false;
+            vm.modalTitle = 'Edit Product';
+            vm.modalButtonTitle = 'update';
+            vm.readOnly = false;
+            vm.modalFunction = updateProduct;
+            vm.isDelete = false;
+
+        }
+        function detail()
+        {
+            vm.modalTitle = 'Created Product';
+            vm.modalButtonTitle = '';
+            vm.readOnly = true;
+            vm.modalFunction = null;
+            vm.isDelete = true;
+
+        }
+        function closeModal()
+        {
+            angular.element('#modal-container').modal('hide');
 
         }
 
