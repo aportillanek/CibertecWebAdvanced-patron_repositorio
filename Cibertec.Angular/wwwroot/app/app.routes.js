@@ -26,7 +26,7 @@
                 templateUrl: 'app/private/customer/index.html'
             })
             .state("otherwise", {
-                url: '*path',
+                url: '/',
                 templateUrl: 'app/home.html'
             });
     }

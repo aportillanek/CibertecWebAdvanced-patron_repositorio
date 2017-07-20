@@ -7,7 +7,7 @@
     {
         var user = localStorageService.get('userToken');
         if (user && user.token) {
-            $http.defaults.headers.common.Authorization = 'Bearer' +
+            $http.defaults.headers.common.Authorization = 'Bearer ' +
 
                 localStorageService.get('userToken').token;
             configService.setLogin(true);

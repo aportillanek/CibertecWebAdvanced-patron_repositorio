@@ -9,8 +9,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Content Include="Controllers\angular-ui-router.js" />
-    <Content Include="wwwroot\app..js" />
     <Content Include="wwwroot\app\app.config.js" />
     <Content Include="wwwroot\app\app.controller.js" />
     <Content Include="wwwroot\app\app.js" />
@@ -18,18 +16,14 @@
     <Content Include="wwwroot\app\components\modal\modal-directive.html" />
     <Content Include="wwwroot\app\components\modal\modal.directive.js" />
     <Content Include="wwwroot\app\home.html" />
-    <Content Include="wwwroot\app\login.html" />
     <Content Include="wwwroot\app\private\customer\customer.controller.js" />
     <Content Include="wwwroot\app\private\customer\directives\customer-card\customer-card.html" />
     <Content Include="wwwroot\app\private\customer\directives\customer-card\customer-card.js" />
     <Content Include="wwwroot\app\private\customer\index.html" />
     <Content Include="wwwroot\app\private\product\directives\product-card\product-card.html" />
     <Content Include="wwwroot\app\private\product\directives\product-card\product-card.js" />
-    <Content Include="wwwroot\app\private\product\directives\product-card\supplier.controller.js" />
     <Content Include="wwwroot\app\private\product\directives\product-form\product-form.html" />
     <Content Include="wwwroot\app\private\product\directives\product-form\product-form.js" />
-    <Content Include="wwwroot\app\private\product\directives\supplier.controller.js" />
-    <Content Include="wwwroot\app\private\product\supplier.controller.js" />
     <Content Include="wwwroot\app\private\supplier\directives\supplier-card\supplier-card.html" />
     <Content Include="wwwroot\app\private\supplier\directives\supplier-card\supplier-card.js" />
     <Content Include="wwwroot\app\private\supplier\index.html" />

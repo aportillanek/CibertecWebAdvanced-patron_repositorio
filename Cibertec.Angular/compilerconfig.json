@@ -1,6 +1,7 @@
 ﻿[
   {
-    "outputFile": "Sass/site.css",
+    "outputFile": "wwwroot/css/site.css",
     "inputFile": "Sass/site.scss"
   }
+ 
 ]

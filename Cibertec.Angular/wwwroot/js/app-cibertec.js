@@ -148,16 +148,13 @@
             }
 
 
-        }
+        };
 
 
     }
 
 
-}
-
-
-)();
+})();
 (function () {
     'use strict';
     angular.module('app')
@@ -314,12 +311,12 @@
 
         function getProduct(id) {
             vm.product = null;
-            dataService.getData(apiUrl + '/product' + id)
+            dataService.getData(apiUrl + '/product/' + id)
                 .then(function (result) {
-                    vm.productList = result.data;
+                    vm.product = result.data;
                 },
                 function (error) {
-                    vm.productList = [];
+                    vm.product = null;
                     console.log(error);
                 });
 
@@ -360,7 +357,7 @@
         function deleteProduct()
         {
 
-            dataService.deleteData(apiUrl + '/product' + vm.product.id)
+            dataService.deleteData(apiUrl + '/product/' + vm.product.id)
                 .then(function (result) {
                    
                     list();
@@ -403,6 +400,16 @@
             vm.modalFunction = null;
             vm.isDelete = true;
 
+        }
+
+        function productDelete() {
+            vm.showCreate = false;
+
+            vm.modalTitle = 'Delete Product';
+            vm.modalButtonTitle = 'Delete';
+            vm.readOnly = false;
+            vm.modalFunction = deleteProduct;
+            vm.isDelete = true;
         }
         function closeModal()
         {

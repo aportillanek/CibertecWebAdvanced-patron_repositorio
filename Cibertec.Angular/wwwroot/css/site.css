@@ -1,38 +1,57 @@
 ﻿body {
-    padding-top: 50px;
-    padding-bottom: 20px;
-}
+  background-color: #fff;
+  margin: 2rem 2rem;
+  padding-top: 5rem; }
+  @media (min-width: 768px) {
+    body {
+      margin-left: 5rem;
+      margin-right: 5rem; } }
+  body header {
+    position: fixed;
+    right: 0;
+    left: 0;
+    top: 0;
+    border-width: 0 0 1px;
+    background-color: #000;
+    height: 4rem; }
+  body footer {
+    background: #000;
+    color: #fff;
+    height: 3rem;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    text-align: center;
+    padding-top: 5px; }
+  body section {
+    background-color: #fff;
+    margin-bottom: 4rem;
+    padding-top: 2rem; }
+  body .row {
+    width: auto; }
 
-/* Wrapping element */
-/* Set some basic padding to keep content from hitting the edges */
-.body-content {
-    padding-top: 4rem;
-    padding-left: 15px;
-    padding-right: 15px;
-}
+.headerlogo img {
+  float: left;
+  margin-left: 2rem;
+  margin-top: 10px;
+  width: 40px;
+  height: auto; }
 
-/* Set widths on the form inputs since otherwise they're 100% wide */
-input,
-select,
-textarea {
-    max-width: 280px;
-}
+input:invalid {
+  border: 2px solid red; }
 
-/* Carousel */
-.carousel-caption p {
-    font-size: 20px;
-    line-height: 1.4;
-}
+.product-card {
+  background-color: #fff;
+  border-radius: 5px;
+  padding-bottom: .5rem;
+  padding-top: .5rem;
+  border: 1px black solid;
+  margin: .5rem;
+  height: 215px; }
+  .product-card div {
+    padding-left: 2rem; }
 
-/* Make .svg files in the carousel display properly in older browsers */
-.carousel-inner .item img[src$=".svg"] {
-    width: 100%;
-}
+.login-control {
+  width: 250px; }
 
-/* Hide/rearrange for smaller screens */
-@media screen and (max-width: 767px) {
-    /* Hide captions */
-    .carousel-caption {
-        display: none;
-    }
-}

@@ -1,6 +1,6 @@
 (function () {
     'use strict';
-    angular.module('app', ['ui.router', 'LocalStorageModule','ngAnimate']);
+    angular.module('app', ['ui.router', 'LocalStorageModule']);
 })();
 
 
@@ -32,7 +32,7 @@
                 templateUrl: 'app/private/customer/index.html'
             })
             .state("otherwise", {
-                url: '*path',
+                url: '/',
                 templateUrl: 'app/home.html'
             });
     }
@@ -46,7 +46,7 @@
     {
         var user = localStorageService.get('userToken');
         if (user && user.token) {
-            $http.defaults.headers.common.Authorization = 'Bearer' +
+            $http.defaults.headers.common.Authorization = 'Bearer ' +
 
                 localStorageService.get('userToken').token;
             configService.setLogin(true);
