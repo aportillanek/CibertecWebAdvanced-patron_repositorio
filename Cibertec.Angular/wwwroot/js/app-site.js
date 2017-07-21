@@ -1,6 +1,6 @@
 (function () {
     'use strict';
-    angular.module('app', ['ui.router', 'LocalStorageModule']);
+    angular.module('app', ['ui.router', 'LocalStorageModule','ui.bootstrap']);
 })();
 
 
@@ -39,7 +39,14 @@
 })();
 (function () {
     'use strict';
-    angular.module('app').run(run);
+    angular.module('app').config(setup).run(run);
+    setup.$inject = ['$compileProvider'];
+
+    function setup($compileProvider)
+    {
+        $compileProvider.debugInfoEnabled(false);
+
+    }
     run.$inject = ['$http', '$state', 'localStorageService', 'configService'];
 
     function run($http, $state, localStorageService, configService)

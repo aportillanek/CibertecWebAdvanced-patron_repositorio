@@ -13,6 +13,16 @@ namespace Cibertec.Repositories.Northwind.EntityFramework
         {
         }
 
+        public int RowNumber()
+        {
+            throw new NotImplementedException();
+        }
+
+        public IEnumerable<Product> SearchByPage(int startRow, int endRow)
+        {
+            throw new NotImplementedException();
+        }
+
         public Product SearchByProductName(string ProducName)
         {
             return _context.Set<Product>().FirstOrDefault(c => c.ProductName == ProducName);

@@ -284,21 +284,43 @@
         vm.isDelete = false;
         vm.modalTitle = '';
         vm.showCreate = false;
+
+
+
+        vm.totalRecords = 0;
+        vm.currentPage = 1;
+        vm.maxSize = 10;
+        vm.itemPerPage = 25;
         //funciones
         vm.getProduct = getProduct;
         vm.create = create;
         vm.edit = edit;
         vm.delete = productDelete;
-        //vm.closeModal=closeModal;
+        vm.pageChanged = pageChanged;
+        
         init();
         function init() {
             if (!configService.getLogin()) return $state.go('login');
-            list();
+           
+            configurePagination();
         }
-        function list() {
-            dataService.getData(apiUrl + '/product')
+        function configurePagination()
+        {
+
+            var widthScreen = (window.innerWidth > 0) ? window.innerWidth : screen.width;
+            if (widthScreen < 420) vm.maxSize = 5;
+            totalRecords();
+        }
+        function pageChanged()
+        {
+            getPageRecords(vm.currentPage);
+        }
+        function totalRecords()
+        {
+            dataService.getData(apiUrl + '/product/count')
                 .then(function (result) {
-                    vm.productList = result.data;
+                    vm.totalRecords = result.data;
+                    getPageRecords(vm.currentPage);
                 },
                 function (error) {
                     vm.productList = [];
@@ -306,6 +328,32 @@
                 });
 
         }
+
+        function getPageRecords(page)
+        {
+            dataService.getData(apiUrl + '/product/list/' + page + '/' + vm.itemPerPage)
+                .then(function (result) {
+                    vm.productList = result.data;
+                  
+                },
+                function (error) {
+                    vm.productList = [];
+                    console.log(error);
+                });
+
+        }
+
+        //function list() {
+        //    dataService.getData(apiUrl + '/product')
+        //        .then(function (result) {
+        //            vm.productList = result.data;
+        //        },
+        //        function (error) {
+        //            vm.productList = [];
+        //            console.log(error);
+        //        });
+
+        //}
 
 
 
@@ -344,7 +392,7 @@
             dataService.postData(apiUrl + '/product', vm.product)
                 .then(function (result) {
                     getProduct(result.data.id)
-                    list();
+                    pageChanged();
                     vm.showCreate = true;
                 },
                 function (error) {
