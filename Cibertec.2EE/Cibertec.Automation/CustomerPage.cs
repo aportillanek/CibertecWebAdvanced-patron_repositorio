@@ -10,7 +10,7 @@ namespace Cibertec.Automation
 {
      public class CustomerPage
     {
-        const string url = "http://localhost/CibertecWeb";
+        const string url = "http://localhost/WebApi";
 
         private readonly IWebDriver _driver;
 
