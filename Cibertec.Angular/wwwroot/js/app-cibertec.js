@@ -240,12 +240,12 @@
         }
         function pageChanged()
         {
-            getPagRecords(vm.currentPage);
+            getPageRecords(vm.currentPage);
 
         }
         function totalRecords()
         {
-            dataService.getData(apiUrl + '/product/count')
+            dataService.getData(apiUrl + '/customer/count')
                 .then(function (result) {
                     vm.totalRecords = result.data;
                     getPageRecords(vm.currentPage);
@@ -286,7 +286,95 @@
                     )
         }
 
-        function updateCustomer(customer)
+        function updateCustomer()
+        {
+            if (!vm.customer) return;
+            dataService.putData(apiUrl + '/customer', vm.customer)
+                .then(function (result) {
+                    vm.customer = {};
+                    pageChanged();
+                    closeModal();
+                },
+                function (error) {
+                    vm.product = {};
+                    console.log(error);
+                });
+
+        }
+
+        function createCustomer(id) {
+            if (!vm.customer) return;
+            dataService.postData(apiUrl + '/customer', vm.customer)
+                .then(function (result) {
+                    getCustomer(result.data.id)
+                    pageChanged();
+                    vm.showCreate = true;
+                },
+                function (error) {
+
+                    console.log(error);
+                });
+
+
+        }
+
+        function deleteCustomer() {
+
+            dataService.deleteData(apiUrl + '/Customer/' + vm.customer.id)
+                .then(function (result) {
+
+                    pageChanged();
+                    closeModal();
+                },
+                function (error) {
+
+                    console.log(error);
+                });
+
+
+        }
+
+        function create() {
+            vm.customer = {};
+            vm.modalTitle = 'New Customer';
+            vm.modalButtonTitle = '';
+            vm.readOnly = false;
+            vm.modalFunction = createCustomer;
+            vm.isDelete = false;
+
+        }
+
+        function edit() {
+            vm.showCreate = false;
+            vm.modalTitle = 'Edit Customer';
+            vm.modalButtonTitle = 'update';
+            vm.readOnly = false;
+            vm.modalFunction = updateCustomer;
+            vm.isDelete = false;
+
+        }
+        function detail() {
+            vm.modalTitle = 'Created Customer';
+            vm.modalButtonTitle = '';
+            vm.readOnly = true;
+            vm.modalFunction = null;
+            vm.isDelete = true;
+
+        }
+
+        function customerDelete() {
+            vm.showCreate = false;
+
+            vm.modalTitle = 'Delete Customer';
+            vm.modalButtonTitle = 'Delete';
+            vm.readOnly = false;
+            vm.modalFunction = deleteCustomer;
+            vm.isDelete = true;
+        }
+        function closeModal() {
+            angular.element('#modal-container').modal('hide');
+
+        } 
         //function list() {
         //    dataService.getData(apiUrl + '/customer')
         //        .then(function (result) {
@@ -341,6 +429,37 @@
     }
 
 })();
+(function ()
+{
+    'use-strict';
+    angular.module('app')
+    .directive('customerForm',customerForm)
+    function customerForm()
+    {
+        return {
+
+            restrict: 'E',
+            scope: {
+                customer:'='
+
+            },
+            templareUrl: 'app/private/customer/directives/customer-form/customer-form.html'
+
+
+        };
+
+
+    }
+
+
+
+
+}
+
+
+
+
+    )();
 (function () {
     'use strict';
     angular.module('app')
@@ -451,7 +570,8 @@
             dataService.putData(apiUrl + '/product', vm.product)
                 .then(function (result) {
                     vm.product = {};
-                    list();
+                 //   list();
+                    pageChanged();
                     closeModal();
                 },
                 function (error) {

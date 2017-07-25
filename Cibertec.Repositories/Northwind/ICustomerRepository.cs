@@ -9,7 +9,7 @@ namespace Cibertec.Repositories.Northwind
     {
 
         Customer SearchByName(string firtsname, string lastName);
-
-
+        int RowNumber();
+        IEnumerable<Customer> SearchByPage(int startRow, int endRow);
     }
 }

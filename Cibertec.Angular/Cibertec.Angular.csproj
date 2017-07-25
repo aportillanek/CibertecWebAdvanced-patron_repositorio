@@ -20,6 +20,7 @@
     <Content Include="wwwroot\app\private\customer\directives\customer-card\customer-card.html" />
     <Content Include="wwwroot\app\private\customer\directives\customer-card\customer-card.js" />
     <Content Include="wwwroot\app\private\customer\directives\customer-form\customer-form.html" />
+    <Content Include="wwwroot\app\private\customer\directives\customer-form\customer-form.js" />
     <Content Include="wwwroot\app\private\customer\index.html" />
     <Content Include="wwwroot\app\private\product\directives\product-card\product-card.html" />
     <Content Include="wwwroot\app\private\product\directives\product-card\product-card.js" />

@@ -108,7 +108,8 @@
             dataService.putData(apiUrl + '/product', vm.product)
                 .then(function (result) {
                     vm.product = {};
-                    list();
+                 //   list();
+                    pageChanged();
                     closeModal();
                 },
                 function (error) {

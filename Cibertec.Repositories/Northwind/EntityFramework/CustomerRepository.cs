@@ -15,9 +15,19 @@ namespace Cibertec.Repositories.Northwind.EntityFramework
 
         }
 
+        public int RowNumber()
+        {
+            throw new NotImplementedException();
+        }
+
         public Customer SearchByName(string firtsname, string lastName)
         {
             return _context.Set<Customer>().FirstOrDefault(c => c.FirstName == firtsname && c.LastName == lastName);
+        }
+
+        public IEnumerable<Customer> SearchByPage(int startRow, int endRow)
+        {
+            throw new NotImplementedException();
         }
     }
 }
