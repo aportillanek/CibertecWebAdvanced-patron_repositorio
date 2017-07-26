@@ -60,10 +60,10 @@ namespace Cibertec.WebApi.Controllers
         }
 
         [HttpPut]
-        public IActionResult Put([FromBody]Product customer)
+        public IActionResult Put([FromBody]Product product)
         {
             if (!ModelState.IsValid) return BadRequest(ModelState);
-            if (!_unit.Products.Update(customer)) return BadRequest("Incorrect id");
+            if (!_unit.Products.Update(product)) return BadRequest("Incorrect id");
             return Ok(new { status = true });
         }
 
