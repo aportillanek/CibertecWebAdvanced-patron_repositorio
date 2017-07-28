@@ -16,6 +16,8 @@
     <Content Include="wwwroot\app\components\modal\modal-directive.html" />
     <Content Include="wwwroot\app\components\modal\modal.directive.js" />
     <Content Include="wwwroot\app\home.html" />
+    <Content Include="wwwroot\app\private\csv-viewer\csv.controller.js" />
+    <Content Include="wwwroot\app\private\csv-viewer\index.html" />
     <Content Include="wwwroot\app\private\customer\customer.controller.js" />
     <Content Include="wwwroot\app\private\customer\directives\customer-card\customer-card.html" />
     <Content Include="wwwroot\app\private\customer\directives\customer-card\customer-card.js" />
