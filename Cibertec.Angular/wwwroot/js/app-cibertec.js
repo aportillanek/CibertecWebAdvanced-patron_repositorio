@@ -313,8 +313,6 @@
                 .then(function (result) {
 
                     vm.customer = result.data;
-
-
                 },
                 function (error) {
                     vm.customer = null;
