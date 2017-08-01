@@ -17,10 +17,10 @@
         <customer-card ng-repeat="customer in vm.customerList "
                       id="{{::customer.id}}"
                      first-name="{{::customer.firstName}}"
+                      last-name="{{::customer.lastName}}"
                       city="{{::customer.city}}"
                       country="{{::customer.country}}"
-                      Phone="{{::customer.phone}}"
-                     >
+                      phone="{{::customer.phone}}">
             <button ng-click="vm.getCustomer(customer.id); vm.edit();" data-toggle="modal" data-target="#modal-container" class="btn btn-success btn-sm">
                 <span class="glyphicon glyphicon-erase"></span> Edit
             </button>

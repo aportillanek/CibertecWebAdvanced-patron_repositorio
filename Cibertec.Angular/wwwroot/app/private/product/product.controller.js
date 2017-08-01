@@ -103,7 +103,7 @@
 
         }
 
-        function updateProduct(id) {
+        function updateProduct() {
             if (!vm.product) return;
             dataService.putData(apiUrl + '/product', vm.product)
                 .then(function (result) {
@@ -120,7 +120,7 @@
 
         }
 
-        function createProduct(id) {
+        function createProduct() {
             if (!vm.product) return;
             dataService.postData(apiUrl + '/product', vm.product)
                 .then(function (result) {
@@ -141,7 +141,7 @@
             dataService.deleteData(apiUrl + '/product/' + vm.product.id)
                 .then(function (result) {
                    
-                    list();
+                    pageChanged();
                     closeModal();
                 },
                 function (error) {

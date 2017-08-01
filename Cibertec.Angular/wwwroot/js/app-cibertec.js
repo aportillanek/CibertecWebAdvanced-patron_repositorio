@@ -314,13 +314,12 @@
 
                     vm.customer = result.data;
 
+
                 },
-                function (error)
-                {
+                function (error) {
                     vm.customer = null;
                     console.log(error);
-                }
-                    )
+                });
         }
 
         function updateCustomer()
@@ -339,7 +338,7 @@
 
         }
 
-        function createCustomer(id) {
+        function createCustomer() {
             if (!vm.customer) return;
             dataService.postData(apiUrl + '/customer', vm.customer)
                 .then(function (result) {
@@ -357,7 +356,7 @@
 
         function deleteCustomer() {
 
-            dataService.deleteData(apiUrl + '/Customer/' + vm.customer.id)
+            dataService.deleteData(apiUrl + '/customer/' + vm.customer.id)
                 .then(function (result) {
 
                     pageChanged();
@@ -602,7 +601,7 @@
 
         }
 
-        function updateProduct(id) {
+        function updateProduct() {
             if (!vm.product) return;
             dataService.putData(apiUrl + '/product', vm.product)
                 .then(function (result) {
@@ -619,7 +618,7 @@
 
         }
 
-        function createProduct(id) {
+        function createProduct() {
             if (!vm.product) return;
             dataService.postData(apiUrl + '/product', vm.product)
                 .then(function (result) {
@@ -640,7 +639,7 @@
             dataService.deleteData(apiUrl + '/product/' + vm.product.id)
                 .then(function (result) {
                    
-                    list();
+                    pageChanged();
                     closeModal();
                 },
                 function (error) {
