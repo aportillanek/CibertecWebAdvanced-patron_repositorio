@@ -10,6 +10,7 @@
         vm.user = {};
         vm.title = 'login';
         vm.login = login;
+        vm.showError =false;
         init();
         function init() {
             if (configService.getLogin())
