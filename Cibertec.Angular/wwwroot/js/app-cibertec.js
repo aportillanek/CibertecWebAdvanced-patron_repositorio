@@ -535,7 +535,7 @@
 {
     'use-strict';
     angular.module('app')
-    .directive('customerForm',customerForm)
+        .directive('customerForm', customerForm);
     function customerForm()
     {
 
