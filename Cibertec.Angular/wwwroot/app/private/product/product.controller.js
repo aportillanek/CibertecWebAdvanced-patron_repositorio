@@ -124,8 +124,9 @@
             if (!vm.product) return;
             dataService.postData(apiUrl + '/product', vm.product)
                 .then(function (result) {
-                    getProduct(result.data.id)
+                    getProduct(result.data.id);
                     pageChanged();
+                   
                     vm.showCreate = true;
                 },
                 function (error) {
@@ -156,7 +157,7 @@
         {
             vm.product = {};
             vm.modalTitle = 'New Product';
-            vm.modalButtonTitle = '';
+            vm.modalButtonTitle = 'Create';
             vm.readOnly = false;
             vm.modalFunction = createProduct;
             vm.isDelete = false;

@@ -9,7 +9,7 @@ namespace Cibertec.Models
         [Required(ErrorMessage ="This field is required")]
         public string FirstName { get; set; }
         [Display(Name = "Last Name")]
-        [Required(ErrorMessage = "This field is required")]
+       [Required(ErrorMessage = "This field is required")]
         public string LastName { get; set; }
         public string City { get; set; }
         public string Country{ get; set; }

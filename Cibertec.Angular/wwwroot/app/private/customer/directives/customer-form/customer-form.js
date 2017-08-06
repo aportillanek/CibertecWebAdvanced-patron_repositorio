@@ -10,10 +10,10 @@
 
             restrict: 'E',
             scope: {
-                customer:'='
 
+                customer: '='
             },
-            templareUrl: 'app/private/customer/directives/customer-form/customer-form.html'
+            templateUrl: 'app/private/customer/directives/customer-form/customer-form.html'
 
 
         };
@@ -24,9 +24,4 @@
 
 
 
-}
-
-
-
-
-    )();
+} )();

@@ -260,7 +260,7 @@
                 //}
                 //vm.csvLines.push(list);
                 //console.log(list);
-                debugger;
+               
                 return callback(reader.result.split("\r\n"));
             };
             reader.readAsBinaryString(fileInput.files[0]);
@@ -379,7 +379,7 @@
             vm.customer = null;
             dataService.getData(apiUrl + '/customer/' + id)
                 .then(function (result) {
-
+                    
                     vm.customer = result.data;
                 },
                 function (error) {
@@ -408,9 +408,10 @@
             if (!vm.customer) return;
             dataService.postData(apiUrl + '/customer', vm.customer)
                 .then(function (result) {
-                    getCustomer(result.data.id)
+                    getCustomer(result.data.id);
                     pageChanged();
                     vm.showCreate = true;
+                    vm.customer = {};
                 },
                 function (error) {
 
@@ -439,7 +440,7 @@
         function create() {
             vm.customer = {};
             vm.modalTitle = 'New Customer';
-            vm.modalButtonTitle = '';
+            vm.modalButtonTitle = 'Create';
             vm.readOnly = false;
             vm.modalFunction = createCustomer;
             vm.isDelete = false;
@@ -543,10 +544,10 @@
 
             restrict: 'E',
             scope: {
-                customer:'='
 
+                customer: '='
             },
-            templareUrl: 'app/private/customer/directives/customer-form/customer-form.html'
+            templateUrl: 'app/private/customer/directives/customer-form/customer-form.html'
 
 
         };
@@ -557,12 +558,7 @@
 
 
 
-}
-
-
-
-
-    )();
+} )();
 (function () {
     'use strict';
     angular.module('app')
@@ -689,8 +685,9 @@
             if (!vm.product) return;
             dataService.postData(apiUrl + '/product', vm.product)
                 .then(function (result) {
-                    getProduct(result.data.id)
+                    getProduct(result.data.id);
                     pageChanged();
+                   
                     vm.showCreate = true;
                 },
                 function (error) {
@@ -721,7 +718,7 @@
         {
             vm.product = {};
             vm.modalTitle = 'New Product';
-            vm.modalButtonTitle = '';
+            vm.modalButtonTitle = 'Create';
             vm.readOnly = false;
             vm.modalFunction = createProduct;
             vm.isDelete = false;
@@ -866,9 +863,9 @@
     'use strict';
 
     angular.module('app')
-        .directive('supplierCard', productCard);
+        .directive('supplierCard', supplierCard);
 
-    function productCard() {
+    function supplierCard() {
         return {
             restrict: 'E',
             transclude: true,

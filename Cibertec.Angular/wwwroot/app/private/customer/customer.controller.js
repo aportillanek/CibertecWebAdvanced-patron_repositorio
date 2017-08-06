@@ -77,7 +77,7 @@
             vm.customer = null;
             dataService.getData(apiUrl + '/customer/' + id)
                 .then(function (result) {
-
+                    
                     vm.customer = result.data;
                 },
                 function (error) {
@@ -106,9 +106,10 @@
             if (!vm.customer) return;
             dataService.postData(apiUrl + '/customer', vm.customer)
                 .then(function (result) {
-                    getCustomer(result.data.id)
+                    getCustomer(result.data.id);
                     pageChanged();
                     vm.showCreate = true;
+                    vm.customer = {};
                 },
                 function (error) {
 
@@ -137,7 +138,7 @@
         function create() {
             vm.customer = {};
             vm.modalTitle = 'New Customer';
-            vm.modalButtonTitle = '';
+            vm.modalButtonTitle = 'Create';
             vm.readOnly = false;
             vm.modalFunction = createCustomer;
             vm.isDelete = false;

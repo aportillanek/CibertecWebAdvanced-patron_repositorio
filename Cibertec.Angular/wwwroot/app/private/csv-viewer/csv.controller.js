@@ -62,7 +62,7 @@
                 //}
                 //vm.csvLines.push(list);
                 //console.log(list);
-                debugger;
+               
                 return callback(reader.result.split("\r\n"));
             };
             reader.readAsBinaryString(fileInput.files[0]);
