@@ -12,6 +12,9 @@
 
         <link href="~/libraries/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
         <link rel="stylesheet" href="~/css/site.css" />
+        <script src="~/js/bootstrap.js"></script>
+        <script src="~/js/jquery.signalR.min.js"></script>
+        <script src="http://localhost/realTime/signalr/hubs"></script>
     </environment>
 
 
@@ -49,14 +52,14 @@
         </footer>
     </div>
     <environment names="Development">
-        <script src="~/js/bootstrap.js"></script>
+      
         <script src="~/js/angular.js"></script>
         <script src="~/js/app-site.js"></script>
         <script src="~/js/app-cibertec.js"></script>
         <script src="~/js/worker.js"></script>
     </environment>
     <environment names="Production">
-        <script src="~/js/bootstrap.min.js"></script>
+        @*<script src="~/js/bootstrap.min.js"></script>*@
         <script src="~/js/angular.min.js"></script>
         <script src="~/js/app-site.min.js"></script>
         <script src="~/js/app-cibertec.min.js"></script>
