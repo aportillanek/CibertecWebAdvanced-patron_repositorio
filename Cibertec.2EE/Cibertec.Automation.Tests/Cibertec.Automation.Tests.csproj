@@ -78,12 +78,6 @@
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Cibertec.Automation\Cibertec.Automation.csproj">
-      <Project>{023d0627-4711-4153-a802-ccd641c637cf}</Project>
-      <Name>Cibertec.Automation</Name>
-    </ProjectReference>
-  </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
       <ItemGroup>
